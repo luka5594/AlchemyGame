@@ -16,7 +16,7 @@ describe('Game1', function () {
     // you must call unlock before you can win
 
     // leave this call to game.win() as-is
-    await game.win();
+    await game.unlock().then(game.win());
 
     // leave this testing assertion as-is
     assert(await game.isWon(), 'You did not win the game');
